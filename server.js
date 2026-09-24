@@ -1,6 +1,7 @@
 const express = require('express');
 const sequelize = require('./config/database');
-const voucherRoutes = require('./routes/vouchers');  // ← THÊM DÒNG NÀY
+const voucherRoutes = require('./routes/vouchers');
+const orderRoutes = require('./routes/orders');   
 
 const app = express();
 
@@ -13,6 +14,7 @@ sequelize.sync().then(() => {
 
 // Routes
 app.use('/api/vouchers', voucherRoutes);  
+app.use('/api/orders', orderRoutes);   
 
 // Route test
 app.get('/', (req, res) => {
