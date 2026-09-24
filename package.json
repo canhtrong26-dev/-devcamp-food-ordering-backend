@@ -1,0 +1,31 @@
+{
+  "name": "devcamp-food-ordering-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/devcamp120.j2605/exercise/canhvt/24.9.2026/food-ordering-project/devcamp-food-ordering-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://gitlab.com/devcamp120.j2605/exercise/canhvt/24.9.2026/food-ordering-project/devcamp-food-ordering-backend/issues"
+  },
+  "homepage": "https://gitlab.com/devcamp120.j2605/exercise/canhvt/24.9.2026/food-ordering-project/devcamp-food-ordering-backend#readme",
+  "dependencies": {
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "mysql2": "^3.24.4",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
