@@ -1,7 +1,9 @@
 const express = require('express');
 const sequelize = require('./config/database');
 const voucherRoutes = require('./routes/vouchers');
-const orderRoutes = require('./routes/orders');   
+const orderRoutes = require('./routes/orders');
+const detailRoutes = require('./routes/details');
+
 
 const app = express();
 
@@ -12,16 +14,15 @@ sequelize.sync().then(() => {
   console.log('Database synced');
 }).catch(err => console.log('Sync error:', err));
 
-// Routes
-app.use('/api/vouchers', voucherRoutes);  
-app.use('/api/orders', orderRoutes);   
+app.use('/api/vouchers', voucherRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/details', detailRoutes);
 
-// Route test
+
 app.get('/', (req, res) => {
   res.json({ message: 'Server đã sẵn sàng khởi động' });
 });
 
-// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
