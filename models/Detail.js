@@ -9,11 +9,19 @@ const Detail = sequelize.define('fo_details', {
   },
   orderId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'fo_orders',
+      key: 'id'
+    }
   },
   foodId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'fo_foods',
+      key: 'id'
+    }
   },
   quantity: {
     type: DataTypes.INTEGER,

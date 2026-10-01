@@ -11,6 +11,14 @@ const Order = sequelize.define('fo_orders', {
     type: DataTypes.STRING(255),
     allowNull: true
   },
+  orderCode: {
+    type: DataTypes.STRING(255),
+    allowNull: false
+  },
+  firstName: {
+    type: DataTypes.STRING(255),
+    allowNull: false
+  },
   lastName: {
     type: DataTypes.STRING(255),
     allowNull: false
@@ -33,7 +41,11 @@ const Order = sequelize.define('fo_orders', {
   },
   voucherId: {
     type: DataTypes.INTEGER,
-    allowNull: true
+    allowNull: true,
+    references: {
+      model: 'fo_vouchers',
+      key: 'id'
+    }
   },
   createdAt: {
     type: DataTypes.DATE,
